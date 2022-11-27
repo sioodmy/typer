@@ -17,13 +17,13 @@ if ((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == true)) {
   <link rel="icon" type="image/svg+xml" href="Img/favicon-light.png" media="(prefers-color-scheme: dark)" />
   <link rel="stylesheet" href="./Styles/styles.css">
   <title>Typer</title>
-  <script src="main.js" defer></script>
+  <!-- <script src="main.js" defer></script> -->
 </head>
 
 <body>
   <div class="container">
     <h2 class="header">Zaloguj się</h2>
-    <form method="POST">
+    <form action="auth.php" method="POST">
       <div class="input">
         <input type="text" name="login" placeholder="Login" required />
       </div>
@@ -33,11 +33,11 @@ if ((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == true)) {
       <div class="form_container">
         <button type="submit" class="button">
           Zaloguj się
-        </button>
+        </button><br>
         <?php
-                if (isset($_SESSION['eror']))
-                  echo $_SESSION['eror'];
-        ?>
+	if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
+?>
+
     </form>
   </div>
   <div class="footer">
