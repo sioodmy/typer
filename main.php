@@ -1,3 +1,14 @@
+<?php
+
+	session_start();
+	
+	if (!isset($_SESSION['loggedIn']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+	
+?>
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -8,8 +19,10 @@
     <title>Typer</title>
   </head>
   <body>
-    <div className={styles.container}>
-        {/* tu masz danielu Miejsce na swój Panel sterowania */}
-      </div>
+  <?php
+
+echo "<p>Witaj ".$_SESSION['imie'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+
+?>
   </body>
 </html>
